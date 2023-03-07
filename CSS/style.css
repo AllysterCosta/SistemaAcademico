@@ -1,8 +1,41 @@
+@import url('/SistemaAcademico/CSS/header.css');
+
 *{
     margin: 0;
     padding: 0;
 }
 
-ul li{
-    list-style: none;
+/* Aqui fica o formulario de envio */
+
+
+.container{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+}
+.container aside{
+    display: flex;
+    justify-content: right
+}
+
+.campos{
+    margin: .2rem;
+    padding: .1rem;
+    outline: none;
+    border: 1px solid #c5c5c5;
+}
+
+.campos:disabled{
+    background-color: #e6e6e6;
+}
+
+.campo-menor{
+    width: 50px;
+}
+
+.aside-menu{
+    background-color: lightblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
 }

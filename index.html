@@ -8,42 +8,58 @@
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-    <header>
+    <header class="header-completo">
         <h1>Allyster Marques | AM</h1>
-        <nav>
-            <ul>
+        <nav class="menu-topo">
+            <ul class="menu-topo-ul">
                 <li>Inicio</li>
                 <li>Cadastro</li>
                 <li>Consultas</li>
             </ul>
         </nav>
     </header>
-    <main>
+    <main classe="conteudo">
         <div class="container">
-            <div class="CadastroDados">
-                <span>Cadastre os dados do Aluno: </span><br>
-                <label>Nome: </label>
-                <input type="text"><br>
-                <label>CPF: </label>
-                <input type="text"><br>
-                <label>Telefone: </label>
-                <input type="text"><br>
-                <label>CEP: </label>
-                <input type="text"><br>
-                <label>Endereço: </label>
-                <input type="text"><label> N°: </label><input type="text"><br>
-                <label>Complemento: </label>
-                <input type="text"><br>
-                <label>Bairro: </label>
-                <input type="text"><br>
-                <label>Cidade: </label>
-                <input type="text"><br>
-                <label>Estado: </label>
-                <input type="text"><br>
+            <div>
+                <div class="CadastroDados">
+                    <span>Cadastre os dados do Aluno: </span><br>
+                    <label>Nome: </label>
+                    <input type="text" class="campos" placeholder="Nome Completo"><br>
+                    <label>CPF: </label>
+                    <input type="text" class="campos" placeholder="CPF"><br>
+                    <label>Telefone: </label>
+                    <input type="text" class="campos" placeholder="(99) 99999-9999"><br>
+                    <label>CEP: </label>
+                    <input type="text" class="campos" placeholder="99999-999"><br>
+                    <label>Endereço: </label>
+                    <input type="text" class="campos" placeholder="Rua ou Avenida..." disabled><label> N°: </label><input type="text" class="campos campo-menor" placeholder="9999"><br>
+                    <label>Complemento: </label>
+                    <input type="text" class="campos" placeholder="Complemento"><br>
+                    <label>Bairro: </label>
+                    <input type="text" class="campos" placeholder="Bairro" disabled><br>
+                    <label>Cidade: </label>
+                    <input type="text" class="campos" placeholder="Cidade" disabled><br>
+                    <label>Estado: </label>
+                    <input type="text" class="campos" placeholder="Estado" disabled><br>
+                    
+                </div>
             </div>
+            <aside class="side-menu">
+                <div class="aside-menu">
+                    <span>Qual cadastro você precisa ralizar:</span>
+                    <ul>
+                        <li>Alunos</li>
+                        <li>Professores</li>
+                        <li>Turmas</li>
+                        <li>Cursos</li>
+                    </ul>
+                </div>
+            </aside>
         </div>
+        
     </main>
-    <footer></footer>
+    
+    <footer class="Rodape-site">Desenvolvido por Allyster Marques</footer>
 
 </body>
 </html>
