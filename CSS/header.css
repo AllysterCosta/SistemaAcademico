@@ -18,3 +18,9 @@ ul li{
 .menu-topo-ul li:hover{
     color: red;
 }
+
+
+footer{
+    display: flex;
+    justify-content: center;
+}
