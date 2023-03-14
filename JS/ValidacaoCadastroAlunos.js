@@ -43,4 +43,8 @@ function CpfValidate(){
         return false;
     }
 }
-
+function telefoneValidate(){
+    let telefone = campos[2].value;
+    telefone = telefone.replace(/[^\d]+/g, ''); /* Aqui será removido tudo que não for digito */
+    console.log('Testes realizados');
+}
