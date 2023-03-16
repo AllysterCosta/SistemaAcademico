@@ -45,6 +45,17 @@ function CpfValidate(){
 }
 function telefoneValidate(){
     let telefone = campos[2].value;
-    telefone = telefone.replace(/[^\d]+/g, ''); /* Aqui será removido tudo que não for digito */
-    console.log('Testes realizados');
+    telefone = telefone.replace(/[^\d]+/g, '') /* Aqui será removido tudo que não for digito */
+    campos[2].value = telefone;
+    if (telefone.length !== 11){
+        setError(2);
+        return false;
+    }else{
+        noError(2);
+        console.log('11 ta certo');
+    }
+    
+}
+function telefoneFormatadoValido(){
+    console.log('olha só deu certo')
 }
