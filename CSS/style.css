@@ -1,41 +1,66 @@
-@import url('/CSS/header.css');
+/* Aqui será feita importação de fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
+:root{
+    --cor-fonte-titulos: #353D41;
 }
 
-/* Aqui fica o formulario de envio */
 
-
+/* Configurações gerais */
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.row{
+    margin: 0;
+}
 .container{
-    background-color: aquamarine;
+    padding: 10px 0;
+}
+p, li{
+    color: #444;
+    font-size: 14px;
+}
+/* As configurações de Header serão feitas separadas */
+header .navbar{
+    background-color: #31454e;
+}
+#nav-container{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+#logo{
+    width: 55px;
+}
+.navbar-brand{
+    padding: 0 10px;
+    color: #fff;
+}
+.navbar-brand:hover{
+    color: #fff;
+}
+#navbar-links a{
+    color: #fff;
+}
+.navbar-expand-lg .navbar-nav .nav-link{
+    padding: 1rem, .8rem;
+
+}
+/* Configurações de rodapé */
+footer{
     display: flex;
     justify-content: center;
 }
-.container aside{
-    display: flex;
-    justify-content: right
+/* Aqui fica o formulario de envio */
+.tituloFormCadastro{
+    font-size: 25px;
+    font-weight: bold;
+    color: #353D41;
 }
 
-.campos{
-    margin: .2rem;
-    padding: .1rem;
-    outline: none;
-    border: 1px solid #c5c5c5;
-}
+/* Configurações do aside menu */
 
-.campos:disabled{
-    background-color: #e6e6e6;
-}
-
-.campo-menor{
-    width: 50px;
-}
-
-.aside-menu{
-    background-color: lightblue;
-    display: flex;
-    flex-direction: column;
-
+.sidebar-title{
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--cor-fonte-titulos)
 }
