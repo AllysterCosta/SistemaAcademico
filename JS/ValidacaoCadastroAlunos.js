@@ -5,6 +5,7 @@ const campos = document.querySelectorAll('.campos');
 
 /* Aqui é setado o estilo do campo a ser validado */
 function setError(index){
+    campos[index].classList.remove('is-valid');
     campos[index].classList.add('is-invalid');
 }
 function noError(index){
@@ -96,7 +97,88 @@ function telefoneFormatadoValido(){
 /* Validação de CEP --> Aqui está sendo consumido a API do ViaCEP para buscar de forma automatica e preencher os campos conforme o CEP digitado no formulario */
 
 function ValidaCEP(){
-    console.log('CARAMBOLAS');
+    let cep = campos[4].value;
+    cep = cep.replace(/[^\d]+/g, '');
+    campos[4].value = cep;
+    if (cep.length < 8){
+        setError(4);
+    }else{
+        buscaCEP();
+        noError(4)
+    }
 }
+function buscaCEP(valor){
+    let cep = campos[4].value;
+    cep = cep.replace(/[^\d]+/g, '');
+    if (cep != ""){
+        let validandoCEP = /^[0-9]{8}$/;
+        if (validandoCEP.test(cep)){
+            //Preenche os campos com "..." enquanto consulta webservice.
+            document.getElementById('endereco').value="...";
+            document.getElementById('bairro').value="...";
+            document.getElementById('cidade').value="...";
+            document.getElementById('estado').value="...";
+
+            //Cria um elemento javascript.
+            let script = document.createElement('script');
+
+            //Sincroniza com o callback.
+            script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+
+            //Insere script no documento e carrega o conteúdo.
+            document.body.appendChild(script);
+        }else{
+            //Se o CEP for inválido
+            limpaCampoCEP();
+            setError(4);
+        }
+    }else{
+        // CEP sem valor, limpar formulário
+        limpaCampoCEP();
+        setError(4);
+    }
+}
+
+function limpaCampoCEP(){
+    /* Atualziando os valors dos campos */
+    document.getElementById('endereco').value = ("");
+    document.getElementById('numeroCasa').value = ("");
+    document.getElementById('bairro').value = ("");
+    document.getElementById('cidade').value = ("");
+    document.getElementById('estado').value = ("");   
+}
+function meu_callback(conteudo){
+    if  (!("erro" in conteudo)){
+        //Atualizar dados
+        document.getElementById('endereco').value=(conteudo.logradouro);
+        document.getElementById('bairro').value=(conteudo.bairro);
+        document.getElementById('cidade').value=(conteudo.localidade);
+        document.getElementById('estado').value=(conteudo.uf);
+        noError(4)
+    }else{
+        // CEP não foi encontrado
+        limpaCampoCEP();
+        setError(4);
+    }
+}
+/* Aqui temina a validação e inserção dos dados de CEP */
+
+/* Aqui desativo o campo numero da residencia caso o check de sem num seja marcado */
+function SemNumdeCasa(){
+    let checkbox = document.getElementById('SNum');
+    let numeroCasa = document.getElementById('numeroCasa');
+    if (checkbox.checked){
+        numeroCasa.disabled = true;
+        numeroCasa.required = false;
+    }else{
+        numeroCasa.disabled = false;
+        numeroCasa.value = '';
+        numeroCasa.required = true;
+    }
+
+}
+
+
+
 
 

@@ -50,17 +50,17 @@
                         <div class="row form-row campos-agrupados">
                             <div class="form-group col-sm-4 mb-2">
                                 <label for="cep">CEP: </label>
-                                <input type="text" class="form-control campos" placeholder="99999-999" maxlength="8" required>
+                                <input type="text" class="form-control campos" placeholder="99999-999" maxlength="8" required oninput="ValidaCEP()">
                             </div>
                             <div class="form-group col-sm-5 mb-2">
                                 <label for="endereco">Endereço: </label>
-                                <input type="text" class="form-control campos" placeholder="Rua ou Avenida..." disabled>
+                                <input type="text" id="endereco" class="form-control campos" placeholder="Rua ou Avenida..." disabled>
                             </div>
                             <div class="form-group col-sm-2 mb-2">
-                                <label>N°</label><input type="text" class="form-control campos campo-menor" placeholder="9999">
+                                <label>N°</label><input type="text" id="numeroCasa" class="form-control campos campo-menor" placeholder="9999">
                             </div>
                             <div class="form-check col-sm">
-                                <input type="checkbox" id="SNum"class="form-check-input" onchange="">
+                                <input type="checkbox" id="SNum"class="form-check-input" onchange="SemNumdeCasa()">
                                 <label>S/N°</label>
                             </div>
                             <div class="form-group col-sm-12 mb-2">
@@ -69,15 +69,15 @@
                             </div>
                             <div class="form-group col-md-4 mb-2">
                                 <label for="bairro">Bairro: </label>
-                                <input type="text" class="form-control campos form-control" placeholder="Bairro" disabled>
+                                <input type="text" id="bairro" class="form-control campos form-control" placeholder="Bairro" disabled>
                             </div>
                             <div class="form-group col-sm-4 mb-2">
                                 <label for="cidade">Cidade: </label>
-                                <input type="text" class="form-control campos" placeholder="Cidade" disabled>
+                                <input type="text" id="cidade" class="form-control campos" placeholder="Cidade" disabled>
                             </div>
                             <div class="form-group col-sm-2 mb-2">
                                 <label for="estado">Estado: </label>
-                                <input type="text" class="form-control campos" placeholder="Estado" disabled>
+                                <input type="text" id="estado" class="form-control campos" placeholder="Estado" disabled>
                             </div>
                         </div>
                         <div class="row justify-content-center">
