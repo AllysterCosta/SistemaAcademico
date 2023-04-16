@@ -1,16 +1,26 @@
-/* A validação dos dados do cadastro de alunos será realizada por este script */
 
-const campos = document.querySelectorAll('.campos');
+/* Verificando se há mensagens a serem exibidas antes da execução da pagina */
+
+
 /* Função para validação do FORM */
 
+function mostrarcampos() {
+    const camposValidos = document.querySelectorAll('.is-valid');
+    console.log(camposValidos);
+}
+
+const campos = document.querySelectorAll('.campos');
 /* Aqui é setado o estilo do campo a ser validado */
 function setError(index){
     campos[index].classList.remove('is-valid');
     campos[index].classList.add('is-invalid');
+    mostrarcampos();
+
 }
 function noError(index){
     campos[index].classList.remove('is-invalid');
     campos[index].classList.add('is-valid');
+    mostrarcampos();
 }
 
 /* Validação do campo nome */
