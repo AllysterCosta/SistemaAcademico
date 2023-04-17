@@ -58,13 +58,17 @@
     if ($conexao->query($inserir) === FALSE){
         die("Erro ao inserir dados: ".$conexao->error);
     }else{
-        echo 'Cadastrado com sucesso!';
+        // Informa inserção com sucesso
+        echo '<script>if(confirm("Aluno cadastrado com sucesso! Volte para a página de cadastro de alunos.")){window.location.href = "CadastroAlunos.html";}</script>';
+        // Mostra mensagem
+        $mensagem = 'Aluno cadastrado!';
     }
+    echo $mensagem;
 
-mysqli_close($conexao);
-sleep(3);
-header('Location: CadastroAlunos.html');
-exit();
+    mysqli_close($conexao);
+    /* sleep(3);
+    header('Location: CadastroAlunos.html'); */
+    exit();
 
 
 ?>

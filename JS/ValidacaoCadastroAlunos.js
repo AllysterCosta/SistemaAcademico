@@ -4,23 +4,19 @@
 
 /* Função para validação do FORM */
 
-function mostrarcampos() {
-    const camposValidos = document.querySelectorAll('.is-valid');
-    console.log(camposValidos);
-}
 
+
+/* Inicio do Script */
 const campos = document.querySelectorAll('.campos');
 /* Aqui é setado o estilo do campo a ser validado */
 function setError(index){
     campos[index].classList.remove('is-valid');
     campos[index].classList.add('is-invalid');
-    mostrarcampos();
 
 }
 function noError(index){
     campos[index].classList.remove('is-invalid');
     campos[index].classList.add('is-valid');
-    mostrarcampos();
 }
 
 /* Validação do campo nome */
@@ -68,18 +64,25 @@ function CpfValidateFormatar(){
 }
 function CpfValidate(){
     let cpf = campos[2].value;
-    cpf = cpf.replace(/[^\d]+/g, '') /* Tudo que não for digito será removido */
+    cpf = cpf.replace(/[^\d]+/g, ''); /* Tudo que não for digito será removido */
+    console.log(cpf);
     if (cpf.length !== 11){ /* Aqui será verificado o tamanho do cpf */
+        /* Aqui será verificado se os digitos são todos iguais */
         setError(2);
         return false;
     }else{
         noError(2);
     }
-    if (/^(\d)1+$/.test(cpf)){ /* Aqui será verificado se os digitos são todos iguais */
+    if(/^(\d)1+$/.test(cpf)){
+        console.log('Erro: CPF todo igual!');
         setError(2);
         return false;
+    }else{
+        noError(2);
     }
 }
+    
+
 
 /* Validação do campo telefone */
 function telefoneValidate(){
