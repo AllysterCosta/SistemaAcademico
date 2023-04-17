@@ -1,9 +1,9 @@
 <?php
     // criando as variaveis
-    $servidor = "localhost";
-    $usuario = "root";
+    $servidor = "";
+    $usuario = "";
     $senha = "";
-    $dbname = "sistema_academico";
+    $dbname = "";
 
     //Criando a conexão
     $conexao = mysqli_connect($servidor, $usuario, $senha, $dbname);
