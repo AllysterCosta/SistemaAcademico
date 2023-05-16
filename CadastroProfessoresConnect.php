@@ -31,7 +31,8 @@
     $verificaCPF = $conexao->query("SELECT * FROM professores WHERE cpf = '$cpf'");
     if ($verificaCPF->num_rows > 0){
         /* Informa ao usuário que o CPF já está cadastrado e interrompe a inserção */       
-        echo '<script>if(confirm("CPF já cadastrado! Deseja voltar para a página de cadastro de alunos?")){window.location.href = "CadastroProfessores.html";}</script>';
+        echo '<script>alert("CPF já cadastrado! Deseja voltar para a página de cadastro de alunos?")</script>
+        <script>window.location.href = "CadastroProfessores.php";</script>';
         // Interrompe a inserção
         $mensagem = 'CPF_ja_cadastrado!';
     }
@@ -46,10 +47,10 @@
     if($conexao->query($inserir) === FALSE){
         die("Erro ao inserir dados: ".$conexao->error);
     }else{
-         // Informa inserção com sucesso
-         echo '<script>if(confirm("Professor cadastrado com sucesso! Volte para a página de cadastro.")){window.location.href = "CadastroProfessores.html";}</script>';
-         // Mostra mensagem
-         $mensagem = 'Professor cadastrado!';
+        // Informa inserção com sucesso
+        echo '<script>if(confirm("Professor cadastrado com sucesso! Volte para a página de cadastro.")){window.location.href = "CadastroProfessores.html";}</script>';
+        // Mostra mensagem
+        /* $mensagem = 'Professor cadastrado!'; */
     }
 
     mysqli_close($conexao);

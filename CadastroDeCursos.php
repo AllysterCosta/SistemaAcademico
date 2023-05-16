@@ -1,3 +1,8 @@
+<?php
+    include 'header.html';
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,20 +15,18 @@
 </head>
 <body>
     <!-- Aqui será feito o cadastro de Cursos para inserção no banco -->
-    <header>
-        <iframe src="./header.html" frameborder="0" width="100%" height="70px"></iframe>
-    </header>
     <main>
         <div class="container">
             <div class="container-fluid row">
                 <div class="col-10">
-                    <form action="" class="form-inline">
+                    <span class="tituloForm">Cadastro de Cursos: </span>
+                    <form method="post" action="CadastroDeCursosConnect.php" class="form-inline mt-3" id="formCadastroCursos">
                         <div class="row form-row align-items-center mb-4">
                             <label for="nome"></label>
-                            <input type="text" id="nome" name="nome" class="form-control campos">
+                            <input type="text" id="nome" name="nome" class="form-control campos" placeholder="Nome do Curso" oninput="ValidandoNome()">
                         </div>
                         <!-- Aqui é dividio os campos -->
-                        <div class="row form-row aling-items-center">
+                        <div class="row form-row aling-items-center mb-4">
                             <div class="from-group col-4">
                                 <div class="input-group">
                                     <label for="duracao"></label>
@@ -31,33 +34,45 @@
                                     <span class="input-group-text">- Meses</span>
                                 </div>
                             </div>
-
                             <div class="row form-group col-8">
-                                <label for="coordenador"></label>
-                                <select class="form-control campos" name="coordenador" id="selectDoBD">
+                                <label for="selectDoBD"></label>
+                                <select class="form-control form-select campos" name="coordenador" id="selectDoBD">
                                    <option value="">Escolha o coordenador</option>
                                    
                                 </select>
                             </div>
-
                         </div>
-                        
-                        
-                        
-                        
+                        <div class="row form-group col-12 mb-4">
+                            <div class="row form-group col-4">
+                                <label for="nivel"></label>
+                                <select class="form-select campos" name="nivel" id="nivel" aria-label=".form-select-sm">
+                                    <option value="">Escolha o nível</option>
+                                    <option value="tecnico">Técnico</option>
+                                    <option value="tecnologo">Tecnólogo</option>
+                                    <option value="bacharelado">Bacharelado</option>
+                                    <option value="licenciatura">Licenciatura</option>
+                                    <option value="especializacao">Especialização</option>
+                                </select>
+                            </div>
+                            <div class="row form-group col-8">
+                                <label for="modalidade"></label>
+                                <select class="form-select campos" name="modalidade" id="modalidade">
+                                    <option value="">Escolha a modalidade do curso</option>
+                                    <option value="presencial">Presencial</option>
+                                    <option value="adistancia">À distância</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group col-12 justify-content-center">
+                            <div class="col-md-2">
+                                <button class="btn btn-primary" type="submit" name="enviar" id="bntEnviar">Enviar</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
                 <!-- Aqui fica a separação do Aside menu com o restante -->
                 <aside class="col-sm sidebar side-menu">
-                    <div class="aside-menu">
-                        <span class="sidebar-title">Qual cadastro você precisa realizar:</span>
-                        <ul class="nav flex-column">
-                            <li class="nav-item"><a class="nav-link" href="./CadastroAlunos.html">Alunos</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./CadastroProfessores.html">Professores</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./CadastroDeTurmas.html">Turmas</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./CadastroDeCursos.html">Cursos</a></li>
-                        </ul>
-                    </div>
+                    <?php include 'asideMenu.html'; ?>
                 </aside>
             </div>
         </div>
@@ -76,5 +91,6 @@
     <!-- Font -->
     <script src="https://kit.fontawesome.com/1fcd89be8b.js" crossorigin="anonymous"></script>
     <script src="JS/ConexaoAoBD.js"></script>
+    <script src="JS/ValidacaoCursos.js"></script>
 </body>
 </html>

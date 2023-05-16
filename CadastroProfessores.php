@@ -1,3 +1,6 @@
+<?php
+    include 'header.html';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,13 +12,11 @@
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
-    <header>
-        <iframe src="./header.html" frameborder="0" width="100%" height="70px"></iframe>
-    </header>
     <main>
         <div class="container">
             <div class="row">
                 <div class="container-fluid col-10">
+                    <span class="tituloForm">Cadastro de Professores:</span>
                     <form action="CadastroProfessoresConnect.php" method="post" id="formProfessores" class="align-items-center" novalidate>
                         <label for="nome"></label>
                         <input type="text" id="nome" name="nome" placeholder="Nome completo" oninput="validaNome()" class="form-control campos" required>
@@ -35,16 +36,9 @@
                     </form>
                 </div>
                 <!-- Aqui fica o menu lateral -->
+                <!-- Aside Menu -->
                 <aside class="col-sm sidebar side-menu">
-                    <div class="aside-menu">
-                        <span class="sidebar-title">Qual cadastro você precisa realizar:</span>
-                        <ul class="nav flex-column">
-                            <li class="nav-item"><a class="nav-link" href="./CadastroAlunos.html">Alunos</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./CadastroProfessores.html">Professores</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./CadastroDeTurmas.html">Turmas</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./CadastroDeCursos.html">Cursos</a></li>
-                        </ul>
-                    </div>
+                    <?php include 'asideMenu.html' ?>
                 </aside>
             </div>
         </div>

@@ -45,7 +45,7 @@
 
     if ($verificaCPF->num_rows > 0){
         /* Informa ao usuário que o CPF já está cadastrado e interrompe a inserção */       
-        echo '<script>if(confirm("CPF já cadastrado! Deseja voltar para a página de cadastro de alunos?")){window.location.href = "CadastroAlunos.html";}</script>';
+        echo '<script>if(confirm("CPF já cadastrado! Deseja voltar para a página de cadastro de alunos?")){window.location.href = "CadastroAlunos.php";}</script>';
         // Interrompe a inserção
         $mensagem = 'CPF_ja_cadastrado!';
     }

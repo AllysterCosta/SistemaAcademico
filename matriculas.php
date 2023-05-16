@@ -8,7 +8,6 @@ $inserir = "INSERT INTO matricula
 
 mysqli_query($conexao, $inserir);
 
-echo 'tudo certo ta';
 
 mysqli_close($conexao);
 
