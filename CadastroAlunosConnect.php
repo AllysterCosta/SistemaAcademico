@@ -59,7 +59,7 @@
         die("Erro ao inserir dados: ".$conexao->error);
     }else{
         // Informa inserção com sucesso
-        echo '<script>if(confirm("Aluno cadastrado com sucesso! Volte para a página de cadastro de alunos.")){window.location.href = "CadastroAlunos.html";}</script>';
+        echo '<script>if(confirm("Aluno cadastrado com sucesso! Volte para a página de cadastro de alunos.")){window.location.href = "CadastroAlunos.php";}</script>';
         // Mostra mensagem
         $mensagem = 'Aluno cadastrado!';
     }

@@ -1,5 +1,6 @@
 <?php 
     include 'header.html';
+    include 'indexProtect.php';
 ?>
 
 <!DOCTYPE html>
@@ -84,8 +85,9 @@
                             </div>
                         </div>
                         <div class="row justify-content-center">
-                            <div class="col-md-2">
+                            <div class="col-md-3 mt-3">
                                 <button id="btnEnviar" class="btn btn-primary" type="submit">Enviar dados</button>
+                                <button id="btnLimpar" class="btn btn-danger" type="reset">Limpar</button>
                             </div>
                         </div>
                     </form>
@@ -100,7 +102,9 @@
              
     </main>
     
-    <footer class="Rodape-site">Desenvolvido por Allyster Marques</footer>
+    <?php
+    include 'footer.html';
+    ?>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>

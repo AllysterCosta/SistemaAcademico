@@ -4,6 +4,7 @@
 :root{
     --cor-fonte-titulos: #353D41;
     --cor-fonte-hover-cinza: #ccc9c9;
+    --cor-menus: #31454e;
 }
 
 
@@ -23,7 +24,7 @@ p, li{
 }
 /* As configurações de Header serão feitas separadas */
 header .navbar{
-    background-color: #31454e;
+    background-color: var(--cor-menus);
 }
 #nav-container{
     padding-top: 0;
@@ -57,7 +58,22 @@ header .navbar{
 footer{
     display: flex;
     justify-content: center;
+    background-color: var(--cor-menus);
 }
+.footer-direitos{
+    color: #fff;
+}
+.redes_sociais{
+    list-style: none;
+}
+#footer-links a{
+    color: #fff;
+}
+#footer-links a:hover{
+    color: var(--cor-fonte-hover-cinza);
+}
+
+
 /* Aqui fica o formulario de envio */
 .tituloForm{/* Usado para todos os titulos de formularios */
     font-size: 25px;
@@ -72,3 +88,30 @@ footer{
     font-weight: bold;
     color: var(--cor-fonte-titulos);
 }
+
+
+/* Area do form de login */
+#loginForm input[type="password"],
+#loginForm input[type="text"]{
+    width: 100%;
+    padding: 12px 36px 12px 12px;
+    box-sizing: border-box;
+}
+
+.password-container{
+    position: relative;
+}
+
+.bi-eye, .bi-eye-slash{
+    font-size: 150%;
+    position: absolute;
+    top: 43%;
+    right: 4%;
+    cursor: pointer;
+    color: gray;
+}
+
+
+
+
+

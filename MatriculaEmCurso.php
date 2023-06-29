@@ -16,5 +16,8 @@
     <aside class="col-sm sidebar side-menu">
         aside menu ficara aqui
     </aside>
+    <?php
+    include 'footer.html';
+    ?>
 </body>
 </html>

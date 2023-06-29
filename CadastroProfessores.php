@@ -31,8 +31,16 @@
                             <option value="mestrado">Mestrado</option>
                             <option value="doutorado">Doutorado</option>
                         </select><br>
-                        <input type="submit" value="Enviar" id="enviar" name="enviar">
-                        <input type="reset" value="Limpar" id="limpar" name="limpar">
+                        <div class="row row-group justify-content-center">
+                            <div class="col-md-3 mt-3">
+                                <button class="btn btn-primary" type="submit" id="enviar" name="enviar">Enviar</button>
+                                <button class="btn btn-danger" type="reset" id="limpar" name="limpar">Limpar</button>
+                            </div>
+                        </div>
+                        <div class="row row-group justify-content-center">
+                            <div class="col-md-2">
+                            </div>
+                        </div> 
                     </form>
                 </div>
                 <!-- Aqui fica o menu lateral -->
@@ -46,7 +54,9 @@
         
     </main>
     
-    <footer class="Rodape-site">Desenvolvido por Allyster Marques</footer>
+    <?php
+    include 'footer.html';
+    ?>
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
